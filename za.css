@@ -1,0 +1,233 @@
+/* =========================================
+   1. GLOBAL RESET & LAYOUT FIX
+   ========================================= */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #0a1428;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+.upisi-main {
+    flex: 1; 
+    padding: 60px 5%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   2. HEADERS
+   ========================================= */
+.section-title {
+    font-family: 'Georgia', serif;
+    font-size: 2.2rem;
+    color: #d4a756;
+    text-align: left;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: #d4a756;
+}
+
+/* =========================================
+   3. ACADEMIC TABLE
+   ========================================= */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-bottom: 60px;
+    scrollbar-width: none;
+}
+
+.table-wrapper::-webkit-scrollbar { display: none; }
+
+.academic-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    table-layout: fixed;
+}
+
+.academic-table th {
+    text-align: left;
+    padding: 15px 20px;
+    color: #d4a756;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1.2px;
+}
+
+.academic-table tr {
+    background: rgba(255, 255, 255, 0.02);
+    transition: 0.3s;
+}
+
+.academic-table tr:hover { background: rgba(212, 167, 86, 0.08); }
+
+.academic-table td {
+    padding: 18px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.academic-table td:first-child {
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px 0 0 10px;
+    font-weight: bold;
+}
+
+.academic-table td:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 0 10px 10px 0;
+    color: #d4a756;
+}
+
+/* =========================================
+   4. REQUIREMENT CARDS
+   ========================================= */
+.requirements-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.req-card {
+    background: rgba(17, 29, 53, 0.5);
+    border: 1px solid rgba(212, 167, 86, 0.1);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.req-card h3 { color: #d4a756; margin-bottom: 20px; font-family: 'Georgia', serif; }
+
+.req-list { list-style: none; padding: 0; }
+
+.req-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+}
+
+.req-list li span { color: #d4a756; font-weight: bold; }
+
+/* =========================================
+   5. SPLIT FOOTER (Timeline + Action)
+   ========================================= */
+.enrollment-footer-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    margin-top: 40px;
+    padding-bottom: 60px;
+}
+
+/* Timeline Side */
+.deadline-container {
+    flex: 1.2;
+    border-left: 2px solid rgba(212, 167, 86, 0.2);
+    padding-left: 40px;
+}
+
+.deadline-item { position: relative; padding-bottom: 35px; }
+
+.deadline-item::before {
+    content: "";
+    position: absolute;
+    left: -49px;
+    top: 5px;
+    width: 14px;
+    height: 14px;
+    background: #d4a756;
+    border-radius: 50%;
+    border: 3px solid #0a1428;
+}
+
+.deadline-item h4 { color: #d4a756; margin: 0 0 5px 0; font-size: 1.1rem; }
+
+.deadline-item p { margin: 0; color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+
+/* Action Side (Fills the gap) */
+.action-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes button to bottom */
+    background: rgba(212, 167, 86, 0.03);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px dashed rgba(212, 167, 86, 0.2);
+}
+
+.docs-needed h3 {
+    font-size: 1.2rem;
+    color: #d4a756;
+    margin-bottom: 15px;
+}
+
+.docs-needed ul {
+    padding-left: 20px;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.9rem;
+}
+
+.docs-needed li { margin-bottom: 10px; }
+
+.portal-btn {
+    display: inline-block;
+    background: #d4a756;
+    color: #0a1428;
+    padding: 18px 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+    border: 2px solid #d4a756;
+    margin-top: 20px;
+}
+
+.portal-btn:hover {
+    background: transparent;
+    color: #d4a756;
+}
+
+/* =========================================
+   6. FOOTER & RESPONSIVE
+   ========================================= */
+.footer-bottom {
+    background-color: #0a1428;
+    padding: 30px 0;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: auto;
+}
+
+@media (max-width: 900px) {
+    .enrollment-footer-row { flex-direction: column; gap: 40px; }
+    .requirements-grid { grid-template-columns: 1fr; }
+    .academic-table { min-width: 600px; }
+}
